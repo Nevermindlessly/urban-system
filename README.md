@@ -1,9 +1,10 @@
-#Project #9: Professional README Generator
-##Description
+# Project #9: Professional README Generator
+
+## Description
 (description)
 
-##Links
+## Links
 (link)
 
-##Screenshots
+## Screenshots
 (screenshots)
