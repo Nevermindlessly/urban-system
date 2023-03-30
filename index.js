@@ -4,8 +4,6 @@ const fs = require('fs');
 
 // TODO: Create an array of questions for user input
 const questions = [
-inquirer
-  .prompt([
     {
       type: 'input',
       name: 'title',
@@ -52,14 +50,17 @@ inquirer
       name: 'email',
       message: 'What is your email address?',
     },
-  ])
-];
+]
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+}
 
 // Function call to initialize app
 init();
