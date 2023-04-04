@@ -14,7 +14,45 @@ function renderLicenseSection(license) {}
 function generateMarkdown(data) {
   return `# ${data.title}
 
-`;
+  ## Description
+
+  ${data.description}
+  
+  ## Table of Contents
+  
+  - [Description](#description)
+    - [Table of Contents](#table-of-contents)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Tests](#tests)
+    - [Contributing](#contributing)
+    - [License](#license)
+    - [Questions](#questions)
+  
+  ## Installation
+  
+  ${data.installation}
+  
+  ## Usage
+  
+  ${data.usage}
+
+  ## Tests
+
+  ${data.tests}
+
+  ## Contributing
+
+  ${data.contributing}
+
+  ## License
+
+  This project is licensed under ${data.license}.
+
+  ## Questions
+
+  ${data.github}
+  ${data.email}`;
 }
 
 module.exports = generateMarkdown;
