@@ -1,18 +1,22 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function createLicenseBadge({ license }) {
+  var licenseBadge = '';
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+  switch (license) {
+    case 'Apache License 2.0':
+      licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+      break;
+    case 'GNU General Public License v3.0':
+      licenseBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+      break;
+    default: console.log('No valid license selected.')
+  };
+  return licenseBadge;
+};
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
-const generateMarkdown = ({ title, description, installation, usage, tests, contributing, license, github, email }) =>
+const generateMarkdown = ({ title, description, installation, usage, tests, contributing, license, github, email }, licenseBadge) =>
   `# ${title}
+
+  ${licenseBadge}
 
   ## Description
 
@@ -21,13 +25,13 @@ const generateMarkdown = ({ title, description, installation, usage, tests, cont
   ## Table of Contents
   
   - [Description](#description)
-    - [Table of Contents](#table-of-contents)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Tests](#tests)
-    - [Contributing](#contributing)
-    - [License](#license)
-    - [Questions](#questions)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Tests](#tests)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Questions](#questions)
   
   ## Installation
   
@@ -54,4 +58,7 @@ const generateMarkdown = ({ title, description, installation, usage, tests, cont
   ${github}
   ${email}`;
 
-module.exports = generateMarkdown;
+  module.exports = {
+    generateMarkdown,
+    createLicenseBadge
+  };  

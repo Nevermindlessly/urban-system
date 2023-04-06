@@ -1,9 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const { generateMarkdown, createLicenseBadge } = require('./utils/generateMarkdown');
 
-inquirer
-  .prompt([
+inquirer.prompt([
     {
       type: 'input',
       name: 'title',
@@ -52,9 +51,11 @@ inquirer
     },
   ])
   .then((data) => {
-    const readmeContent = generateMarkdown(data);
+    const licenseBadge = createLicenseBadge(data);
+    
+    const readmeContent = generateMarkdown(data, licenseBadge);
 
-    fs.writeFile('READMoo.md', readmeContent, (err) =>
+    fs.writeFile('README.md', readmeContent, (err) =>
     err ? console.log(err) : console.log('Successfully created README!')
     );
 });
