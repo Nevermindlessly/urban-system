@@ -1,7 +1,9 @@
+// Imports dependencies and functions.
 const inquirer = require('inquirer');
 const fs = require('fs');
 const { generateMarkdown, createLicenseBadge } = require('./utils/generateMarkdown');
 
+// Prompts the user for information to populate the README.
 inquirer.prompt([
     {
       type: 'input',
@@ -37,7 +39,7 @@ inquirer.prompt([
       type: 'list',
       name: 'license',
       message: 'Under which license would you like to publish this project?',
-      choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU General Public License v2.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
+      choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause "Simplified" License', 'BSD 3-Clause "New" or "Revised" License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU General Public License v2.0', 'Mozilla Public License 2.0', 'The Unlicense'],
     },
     {
       type: 'input',
@@ -50,11 +52,13 @@ inquirer.prompt([
       message: 'What is your email address?',
     },
   ])
-  .then((data) => {
-    const licenseBadge = createLicenseBadge(data);
-    
-    const readmeContent = generateMarkdown(data, licenseBadge);
 
+  .then((data) => {
+    // Creates license badge near the top of the page.
+    const licenseBadge = createLicenseBadge(data);
+    // Generates markdown featuring all of above input.
+    const readmeContent = generateMarkdown(data, licenseBadge);
+    // Creates a new README file, returns success/error message based on outcome.
     fs.writeFile('README.md', readmeContent, (err) =>
     err ? console.log(err) : console.log('Successfully created README!')
     );
