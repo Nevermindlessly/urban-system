@@ -9,3 +9,7 @@
   ## Links
 
   Sample video: https://drive.google.com/file/d/1cOhebTUTQltLco0gajcKAlwtwEUKmjwm/view
+
+  ## Credits
+
+  Thanks to Github user 'lukas-h' for the license badge images and links!
