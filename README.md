@@ -1,43 +1,11 @@
-# a
+# Project #9: README Generator
 
   [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
   ## Description
 
-  a
+  This is a command line application built as a project for the UNCC full-stack coding bootcamp. The app takes in user input from an Inquirer prompt, then uses it to generate a professional README with links to each section and a license badge.
   
-  ## Table of Contents
-  
-  - [Description](#description)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Tests](#tests)
-  - [Contributing](#contributing)
-  - [License](#license)
-  - [Questions](#questions)
-  
-  ## Installation
-  
-  a
-  
-  ## Usage
-  
-  a
+  ## Links
 
-  ## Tests
-
-  a
-
-  ## Contributing
-
-  a
-
-  ## License
-
-  This project is licensed under Apache License 2.0.
-
-  ## Questions
-
-  a
-  a
+  Sample video: https://drive.google.com/file/d/1cOhebTUTQltLco0gajcKAlwtwEUKmjwm/view
